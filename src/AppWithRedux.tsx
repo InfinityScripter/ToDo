@@ -20,7 +20,7 @@ export type TasksStateType = {
 }
 
 
-function App() {
+function AppWithRedux() {
 
 
   //TODOLISTS STATE
@@ -191,4 +191,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppWithRedux;
