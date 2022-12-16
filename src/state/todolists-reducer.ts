@@ -37,7 +37,9 @@ export type ActionType =
 
 //====================  РЕДЬЮСЕР  ====================
 
-export const todolistsReducer = (state: TodolistType[], action: ActionType):TodolistType[] => {
+const initialState: TodolistType[] = []
+
+export const todolistsReducer = (state: TodolistType[] = initialState, action: ActionType):TodolistType[] => {
   switch (action.type) {
     case 'REMOVE-TODOLIST': {
       return state.filter(tl => tl.id !== action.id)
@@ -60,7 +62,7 @@ export const todolistsReducer = (state: TodolistType[], action: ActionType):Todo
       return [...state]
     }
     default:
-      throw new Error("I don't understand this type")
+    return state
   }
 }
 
